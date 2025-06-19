@@ -39,7 +39,7 @@ Para la correcta configuración del dispositivo Dragino, se ha utilizado el ento
 6. Cargar el script de configuración desde la carpeta del proyecto.
 
 📁 **Ruta útil**:  
-Dentro del repositorio, la carpeta `configuració_Dragino/` contiene:
+Dentro del repositorio, la carpeta `configuracion_dragino/` contiene:
 
 - Scripts de configuración para los dispositivos Dragino.
 - Guía detallada paso a paso para la carga y prueba de firmware.
