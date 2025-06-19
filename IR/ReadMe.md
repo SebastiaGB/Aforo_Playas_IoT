@@ -1,40 +1,85 @@
-# People Counter IR, Sensors Infrarrotjos
+# 👣 Sistema de Conteo de Personas con Sensores Infrarrojos (IR)
 
-Com s'ha mencionat, es tenen 2 parelles de sensors IR, es a dir 4 dispositius, formant dues barreres infrrarotjes entre emissor y receptor per a supervisar l'entrada de les covetes.\
-Les barreres s'identifiquen amb el nom de A i B. 
+Este sistema forma parte del proyecto de control de aforo en la Playa de Es Trenc. Se compone de sensores infrarrojos instalados en accesos peatonales clave, concretamente en el camino de entrada de Ses Covetes. Su función es detectar el paso de personas para calcular en tiempo real la ocupación de la playa.
 
-A la carpeta 'Documentació' es troben el manual d'usuari i les especificacions d'aquest.
+---
 
-## Característiques
-Els dispositius son IP 20 de interior, i funcionen CADA UN amb dues piles AA de 1,5 V. Aquets estan coberts amb una carcasa per a poder funcionar a l'exterior sense cap inconvenient. Es important la forma en que es coloquen els sensors dins la carcasa. Aquesta té un forat a l'interior que indica que la part inferior del sensor es colocarà allà.
+## 📦 Componentes del Sistema
 
-* El emissor té: 
-  - un botó d'activació.
-  - un sol led Infrarrog.
-  - una led d'indicació.
+El sistema consta de **2 pares de sensores infrarrojos** (4 dispositivos en total), cada par forma una doble barrera entre un **emisor** y un **receptor**. Estas barreras se denominan **A** y **B**, y permiten determinar si una persona entra o sale del recinto según el orden en que se interrumpen.
 
-* El receptor té:
-  - una led destatus.
-  - dos led Infrarrotjes.
-  - es el que transmet.
+📂 Documentación técnica completa disponible en la carpeta `IR/`.
 
-PD: Degut al doble mirall que té la carcasa del emissor que tengui un sol led no l'impedeix la sortida de dos feixos de llum per a formar les dues barreres.
+---
 
-### Posada en marcha
-Es possen les piles al emissor, es pressiona el botó i la led parpadetja dos voltes en vermell. Llavors es possen les piles al receptor i comença a parpedatjar una led en blau, que indica que s'està conectant a la xarxa. Si parpadetja en varmell indica que la batería sestà baixa. Per comprovar que s'ha conectat exitosament a la xarxa acaba parpadetjant en verd.
+## ⚙️ Especificaciones Técnicas
 
-## Distribució
-A la plataforma IOTIB reben les parelles reben el nom de IRpeoplecounter i IRpeoplecounter2. I els identificarem com a IR e IR2.
-De cara a la platja IR es trobarà a la zona de pas de l'esquerra e IR2 a l'altre zona de pas.\
-El receptor de les parelles s'ha colocat a l'esquerre i el emissor a la dreta.\
-MIRANT DE CARA AL RECEPTOR la barrera A està a la dreta i la B a l'esquerre, per tant si es romp primer A la persona surt i de forma contraria la persona entra al recinte.
+- **Dispositivos**: IP20 (uso interior), adaptados para exterior con carcasa protectora.
+- **Alimentación**: 2 pilas AA de 1,5 V por unidad.
+- **Colocación**: La carcasa incluye una guía para orientar correctamente el sensor.
 
-La configuració es fa a través de NFC empleant l'aplicació **IMBuildings** sols disponible per android. El keep alive es cada 30 minuts, tenen el adr desactivat, estàn configurats ens DR 0 (SF 12), per a que sempre intenti transmetre amb el major rang possible degut a la seva ubicació.
+### 🟢 Emisor
+- 1 LED infrarrojo.
+- 1 LED indicador.
+- Botón de encendido.
 
-En aquest URL es veuren totes les opcions disponibles de opcions i configuració, mes la opció de decodificaicó de uplinks: 
+### 🔵 Receptor
+- 2 LEDs infrarrojos.
+- 1 LED de estado.
+- Es el dispositivo que recibe y transmite los datos.
 
-    https://support.imbuildings.com/docs/#/./tools/downlink/
-Set s'emplea per a realitzar el canvi.\
-Request per a fer una petició.\
-PD: En aquest URL es pot trobar mes informació com per exemple el decodificador del paylod, calculador de bateria, etc.
-  
+📌 *Gracias a un sistema de doble espejo en la carcasa del emisor, una única fuente infrarroja puede generar dos haces de luz independientes.*
+
+---
+
+## 🚀 Puesta en Marcha
+
+1. Insertar las pilas en el **emisor** y presionar el botón: el LED parpadea en rojo dos veces.
+2. Insertar las pilas en el **receptor**:
+   - LED azul parpadeando: buscando red.
+   - LED rojo: batería baja.
+   - LED verde: conectado correctamente.
+
+---
+
+## 🌐 Distribución e Identificación en Plataforma
+
+En la plataforma **IoTIB**, los sensores están registrados como:
+
+- `IRpeoplecounter` → zona izquierda del acceso.
+- `IRpeoplecounter2` → zona derecha del acceso.
+
+📍 **Ubicación física**:
+- Cada par se instala con el **receptor a la izquierda** y el **emisor a la derecha** (visto desde el acceso).
+- Si se interrumpe primero la barrera A → se interpreta como **salida**.
+- Si se interrumpe primero la barrera B → se interpreta como **entrada**.
+
+---
+
+## 🔧 Configuración
+
+- Se realiza vía **NFC** con la app **IMBuildings** (solo Android).
+- Keep alive: cada 30 minutos.
+- ADR: desactivado.
+- Data Rate: configurado en **DR0 (SF12)** para máxima cobertura.
+
+📖 Más información y herramientas en:
+🔗 [IMBuildings Docs & Tools](https://support.imbuildings.com/docs/#/./tools/downlink/)
+
+Incluye:
+- Decodificador de payloads.
+- Calculador de batería.
+- Comandos `SET` y `REQUEST` para configuración remota.
+
+---
+
+## 🛡️ Privacidad y Fiabilidad
+
+✔️ No se almacena ninguna imagen.  
+✔️ El conteo es completamente anónimo.  
+✔️ Bajo consumo y mantenimiento mínimo.  
+✔️ Adaptado a condiciones exteriores sin conexión eléctrica.
+
+---
+
+> 📝 Este sistema fue desarrollado como parte de un proyecto profesional de infraestructura IoT para control de aforo en espacios naturales. Esta documentación tiene fines demostrativos y no contiene datos sensibles ni accesos reales.
