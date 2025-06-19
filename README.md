@@ -57,7 +57,7 @@ Los dispositivos se instalaron en diferentes puntos clave:
 📁 IR/                        → Documentación y calibración de sensores infrarrojos  
 📁 Milesight/                 → Configuración de transmisores con ToolBox  
 📁 Dragino/                   → Guía y firmware para Dragino con Arduino IDE  
-📁 Raspberry/                 → Configuración previa del dispositivo
+📁 Raspberry/                 
 ├── 📁 scripts_dragino/       → Scripts Python para enviar datos por RS485 a Dragino  
 └── 📁 scripts_milesight/     → Scripts Python para dispositivos Milesight
 
