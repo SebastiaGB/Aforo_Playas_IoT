@@ -23,7 +23,7 @@ El sistema permite:
 - **Sensores infrarrojos bidireccionales** para conteo por ruptura de haz.
 - **Raspberry Pi** como nodo de procesamiento local y enlace.
 - **Transmisores LoRa** (Milesight y Dragino).
-- **Scripts Python** para comunicación serial, lectura de contadores y sincronización horaria.
+- **Scripts Python** para enviar, recibir y reiniciar los datos mediante el uso de la variable: 'contadores'.
 - **Plataforma IoTIB** para visualización en tiempo real.
 
 ---
@@ -54,11 +54,10 @@ Los dispositivos se instalaron en diferentes puntos clave:
 
 ## 🧩 Estructura del Repositorio
 
-📁 Distribució_camares/       → Esquema y claves de ubicación de cámaras  
 📁 IR/                        → Documentación y calibración de sensores infrarrojos  
 📁 Milesight/                 → Configuración de transmisores con ToolBox  
 📁 Dragino/                   → Guía y firmware para Dragino con Arduino IDE  
-📁 Raspberry/  
+📁 Raspberry/                 → Configuración previa del dispositivo
 ├── 📁 scripts_dragino/       → Scripts Python para enviar datos por RS485 a Dragino  
 └── 📁 scripts_milesight/     → Scripts Python para dispositivos Milesight
 
@@ -111,7 +110,7 @@ Los dispositivos se instalaron en diferentes puntos clave:
 
 ## 🔍 Ejemplo de Lógica en Raspberry
 
-Los scripts `lecturacontadors.py` y `reiniciarcontadors.py` incluyen:
+Los scripts incluyen:
 
 - Lectura de XML de la cámara vía HTTPS.
 - Decodificación hexadecimal → valores numéricos.
