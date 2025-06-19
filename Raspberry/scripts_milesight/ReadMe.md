@@ -20,15 +20,17 @@ Además, requiere un archivo `.txt` (cuyo nombre y ruta puedes definir) que actu
 
 ### `milesight_controller.py`
 
-- `port_dragino`: puerto serie donde está conectado el dispositivo
-- `password`: contraseña de acceso a la cámara
-- `direccio_ip`: dirección IP del dispositivo Bosch
-- `ruta/a/fitxer.txt`: ruta al archivo local `.txt` donde guardar los contadores
+- `puerto`: puerto serie donde está conectado el dispositivo
+- `usuario`: nombre de usuario de acceso a la cámara
+- `contraseña`: contraseña de acceso a la cámara
+- `direccion_ip`: dirección IP del dispositivo Bosch
+- `ruta/a/fitxero.txt`: ruta al archivo local `.txt` donde guardar los contadores
 
 ### `reiniciarcontadors.py`
 
-- `password`: contraseña de acceso a la cámara
-- `direccio_ip`: dirección IP del dispositivo
+- `usuario`: nombre de usuario de acceso a la cámara
+- `contraseña`: contraseña de acceso a la cámara
+- `direccion_ip`: dirección IP del dispositivo
 
 ---
 
