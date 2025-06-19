@@ -5,7 +5,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # Credencials
-username = "service"
+username = "<usuario>"
 password = "<contraseña>"
 
 # URL de la càmara Bosch IP y comanda para obtenir els valores de els contadores IVA
