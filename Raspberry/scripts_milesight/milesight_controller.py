@@ -16,7 +16,7 @@ BAUDRATE = ...
 
 # Camera credentials and URL
 USERNAME = "<usuario>"
-PASSWORD = "contraseña"
+PASSWORD = "<contraseña>"
 URL_IVA_COUNTER_VALUES = "https://<dirección_ip>/rcp.xml?command=0x0b4a&type=P_OCTET&direction=READ"
 
 # Ignore SSL warnings
