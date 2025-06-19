@@ -74,7 +74,7 @@ def decode_xml_response(xml_response):
 # Function to save counters into a text file
 def save_counters_to_txt(counters):
     try:
-        with open(FILE_PATH, 'a') as file:
+        with open(<ruta_fichero>, 'a') as file:
             date_time_string = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
             for counter in counters:
                 file.write(f"Value: {str(counter)}, Date: {date_time_string}\n")
