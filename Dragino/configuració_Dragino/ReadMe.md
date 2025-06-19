@@ -44,7 +44,7 @@ Parámetros usados para configurar el Dragino:
 
 Se ejecuta al iniciar el dispositivo:
 
-- Inicia el puerto serie a 115200 baudios.
+- Inicia el puerto serie a ... baudios.
 - Define claves OTAA: `DevEUI`, `AppEUI`, `AppKey`.
 - Establece:
   - Data Rate 0 (SF12)
