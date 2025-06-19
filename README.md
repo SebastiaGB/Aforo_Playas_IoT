@@ -1,117 +1,149 @@
-# 📍 Proyecto de Control de Aforo en Espacio Natural (Versión Técnica Demostrativa)
+# 🏖️ Proyecto de Control de Aforo en la Playa de Es Trenc (Mallorca)
 
-> ⚠️ Este repositorio documenta una **recreación técnica basada en un proyecto real** desarrollado durante mi experiencia profesional como técnico IoT en colaboración con una entidad pública.  
-> Todo el contenido ha sido adaptado para proteger datos sensibles, pero representa fielmente la arquitectura y lógica funcional implementadas.
-
----
-
-## 🎯 Objetivo del Proyecto
-
-Diseñar y desplegar una solución IoT de conteo automatizado de personas y vehículos para gestionar el aforo en un entorno natural protegido.  
-
-El sistema tenía como objetivos:
-
-- Controlar el acceso peatonal en varios puntos de entrada.
-- Monitorizar el aparcamiento de vehículos.
-- Enviar datos en tiempo real a una plataforma de gestión centralizada.
-- Garantizar privacidad, sostenibilidad y operatividad en condiciones remotas.
+> ⚠️ Proyecto desarrollado durante mi etapa como técnico IoT en colaboración con FUEIB. Esta versión es una **recreación técnica** con fines demostrativos. No incluye datos sensibles ni contraseñas.
 
 ---
 
-## 🧱 Arquitectura y Tecnologías
+## 📌 Resumen General
 
-- **LoRaWAN** para transmisión remota eficiente.
-- **Cámaras Bosch IP (7000i / 8000i)** con analítica embebida.
-- **Sensores infrarrojos bidireccionales** para conteo peatonal.
-- **Raspberry Pi** como gateway local + scripts en Python.
-- Plataforma externa para visualización de datos (**IoTIB** en el proyecto real).
-- Transmisores **Dragino** (Clase A) y **Milesight** (Clase C).
+Este proyecto consistió en diseñar e implementar un sistema IoT para el **control de aforo** en la Playa de Es Trenc, un espacio natural protegido con una gran afluencia de visitantes durante los meses de verano.
+
+El sistema permite:
+
+- 👣 Contabilizar el acceso y salida de personas en diferentes entradas de la playa.
+- 🚗 Contabilizar los vehículos en el aparcamiento.
+- 📡 Enviar los datos en tiempo real a una plataforma de visualización remota (**IoTIB**).
+- ✅ Operar de forma automatizada, respetando la privacidad y con bajo mantenimiento.
+
+---
+
+## 🧠 Tecnologías Utilizadas
+
+- **Cámaras Bosch IP (7000i y 8000i)** con analítica de vídeo (VCA).
+- **Sensores infrarrojos bidireccionales** para conteo por ruptura de haz.
+- **Raspberry Pi** como nodo de procesamiento local y enlace.
+- **Transmisores LoRa** (Milesight y Dragino).
+- **Scripts Python** para comunicación serial, lectura de contadores y sincronización horaria.
+- **Plataforma IoTIB** para visualización en tiempo real.
+
+---
+
+## 🛠️ Infraestructura del Sistema
+
+Los dispositivos se instalaron en diferentes puntos clave:
+
+| Ubicación                        | Dispositivo instalado             | Función principal                     |
+|----------------------------------|-----------------------------------|----------------------------------------|
+| Colònia de Sant Jordi (Na Tirapel) | Cámara Bosch + Dragino LoRa       | Conteo de personas                    |
+| Aparcamiento de la Salinera       | Cámara Bosch + Milesight LoRa     | Conteo de vehículos                   |
+| Entrada de Ses Covetes           | Sensores infrarrojos dobles       | Conteo bidireccional de peatones      |
+
+➡️ El sistema **no almacena imágenes** ni identifica personas o vehículos. Solo realiza conteo de forma anónima.
 
 ---
 
 ## ⚙️ Funcionamiento General
 
-1. 📸 Captura de eventos mediante sensores y cámaras.
-2. 🧠 Procesamiento en Raspberry Pi: recolección, filtrado, formateo.
-3. 📡 Envío de datos a plataforma central vía LoRa.
-4. 🌐 Visualización en tiempo real mediante interfaz web.
+1. La cámara o sensor recoge eventos de paso (persona o vehículo).
+2. La Raspberry recoge y procesa los datos.
+3. La Raspberry envía los datos por **RS485** al transmisor LoRa.
+4. El transmisor LoRa envía los datos a **IoTIB**.
+5. La plataforma muestra el aforo en tiempo real.
 
 ---
 
-## 🗂️ Organización del Repositorio
+## 🧩 Estructura del Repositorio
 
-### 📂 `Distribucion_camaras/`
-Esquemas de ubicación y lógica de instalación de los dispositivos.
-
-### 📂 `Raspberry/`
-Scripts principales de operación. Subdivididos por transmisor:
-
-- `scripts_dragino/` — comunicación vía RS485 con Dragino.
-- `scripts_milesight/` — configuración y comunicación con Milesight.
-
-### 📂 `Dragino/`
-Pasos para flasheo y configuración del transmisor Dragino mediante Arduino IDE.
-
-### 📂 `Milesight/`
-Guía de configuración con la herramienta ToolBox (software oficial).
-
-### 📂 `IR/`
-Documentación técnica de sensores infrarrojos: instalación, calibración, parámetros.
+📁 Distribució_camares/       → Esquema y claves de ubicación de cámaras  
+📁 IR/                        → Documentación y calibración de sensores infrarrojos  
+📁 Milesight/                 → Configuración de transmisores con ToolBox  
+📁 Dragino/                   → Guía y firmware para Dragino con Arduino IDE  
+📁 Raspberry/  
+├── 📁 scripts_dragino/       → Scripts Python para enviar datos por RS485 a Dragino  
+└── 📁 scripts_milesight/     → Scripts Python para dispositivos Milesight
 
 ---
 
-## 🧰 Configuración Técnica
+## 🔧 Componentes Técnicos
 
-### 📷 Cámaras Bosch (7000i / 8000i)
+### 🎥 Cámaras Bosch IP (7000i y 8000i)
 
-- Configuración vía **Configuration Manager**.
-- Creación de líneas de conteo con perfiles VCA.
-- IP estática, acceso por interfaz web (`usuario: service`).
-- Analítica embebida sin almacenamiento de vídeo.
+- Calibración con **Configuration Manager** y/o **Project Manager**.
+- Uso de **Video Analytics (VCA)** para detectar y contar objetos.
+- Configuración de perfiles, líneas de conteo y sincronización de hora.
+- El modelo 8000i soporta WiFi; el 7000i no.
 
-### 🖥️ Raspberry Pi
+### 🍓 Raspberry Pi
 
-- Sistema: Raspbian.
-- Ethernet hacia red de cámaras.
-- Puerto serie RS485 hacia transmisor LoRa.
-- Scripts en Python para adquisición y envío programado.
+- Sistema operativo: Raspbian.
+- Interfaz Ethernet con la cámara.
+- Comunicación serial con LoRa.
+- Scripts Python personalizados:
+  - Lectura de contadores Bosch (API RCP).
+  - Sincronización horaria vía downlink.
+  - Envío periódico de datos.
 
-### 📡 Transmisores LoRa
+### 📶 Transmisores LoRa
 
-- **Dragino (Clase A)**: solo recibe mensajes tras enviar (uplink → downlink).
-- **Milesight (Clase C)**: escucha permanente (menos en momento de envío).
-
----
-
-## 🔄 Integración con Plataforma IoT
-
-### 📤 Envío de datos (uplink)
-
-- Formato: hexadecimal.
-- Separador: `FF` (hex `4646`).
-- Ejemplo: `303146463234464632` → `01 FF 24 FF 2` (personas o vehículos).
-
-### 📥 Recepción de instrucciones (downlink)
-
-Usado principalmente para **sincronizar la hora** de los dispositivos.
-
-- **Milesight**: formato hexadecimal (`12:30` → `31323330`), puerto 2.
-- **Dragino**: decimal (`12:30` → `1230`), puerto 1 (tras uplink).
+| Modelo     | Clase | Downlink | Notas técnicas                                   |
+|------------|-------|----------|--------------------------------------------------|
+| Dragino    | A     | Solo tras uplink | Usa puerto 1, formato decimal (ej. `1230`)    |
+| Milesight  | C     | Cualquier momento excepto durante uplink | Usa puerto 2, hexadecimal (`31323330`) |
 
 ---
 
-## ✅ Resultados Destacados
+## 📡 Comunicación con Plataforma IoTIB
 
-- ✔️ Sistema instalado y funcional en condiciones reales.
-- ✔️ Datos accesibles en tiempo real desde plataforma externa.
-- ✔️ Anonimato garantizado (no se capturan ni almacenan imágenes).
-- ✔️ Bajo consumo, autonomía solar y alta robustez operativa.
-- ✔️ Mínimo mantenimiento, fácil replicabilidad.
+### Envío de datos (uplink)
+
+- Datos en formato hexadecimal separados por `FF`.
+- Ejemplo: `303146463234464632` → `01 FF 24 FF 2`
+- Interpretación: 3 contadores activos.
+
+### Recepción de instrucciones (downlink)
+
+- Sincronización horaria automática.
+- Ejemplo de hora:
+  - **Dragino (decimal)**: `1230` (hora)
+  - **Milesight (hex)**: `31323330` = `12:30`
 
 ---
 
-## 🔐 Nota de Ética
+## 🔍 Ejemplo de Lógica en Raspberry
 
-> Este documento es una **reconstrucción técnica no confidencial** basada en mi participación real en un proyecto profesional.  
-> Todo el código, documentación y arquitectura ha sido adaptado, anonimizando nombres, IPs y configuraciones específicas para proteger la privacidad del entorno y la entidad promotora.
+Los scripts `lecturacontadors.py` y `reiniciarcontadors.py` incluyen:
+
+- Lectura de XML de la cámara vía HTTPS.
+- Decodificación hexadecimal → valores numéricos.
+- Guardado en `.txt` con marca de tiempo.
+- Envío vía serial (RS485) al transmisor.
+- Escucha activa de comandos (sincronización horaria).
+
+---
+
+## 🔒 Seguridad y Privacidad
+
+✅ El sistema está diseñado para ser **totalmente anónimo**.  
+✅ Solo se almacenan datos numéricos de conteo.  
+✅ No se capturan ni almacenan imágenes ni datos personales.  
+✅ En esta versión pública **no se incluye** ninguna contraseña, dirección IP real ni credenciales.
+
+---
+
+## ✅ Resultados Obtenidos
+
+- ✅ Instalación estable y operativa durante la temporada.
+- ✅ Monitorización en tiempo real de aforo en la plataforma IoTIB.
+- ✅ Automatización completa sin necesidad de intervención constante.
+- ✅ Sistema adaptable y escalable para otros entornos naturales.
+
+---
+
+📬 **¿Quieres saber más sobre cómo funciona el sistema o ver el código en acción?**  
+Puedes explorar los scripts en las carpetas `Raspberry/scripts_dragino` y `Raspberry/scripts_milesight`.
+
+---
+
+⭐ *Este proyecto representa una experiencia real de campo en soluciones IoT aplicadas a espacios naturales. Fue una gran oportunidad para aplicar conocimientos técnicos, trabajo en equipo e innovación sostenible.*
+
 
