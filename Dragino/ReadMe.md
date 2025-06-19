@@ -8,7 +8,8 @@
 
 Consulta las especificaciones y guía técnica del modelo en la wiki de Seeed Studio:
 
-🔗 [Ver documentación oficial Dragino](https://wiki.seeedstudio.com/Seeeduino_LoRAWAN/)
+🔗 <a href="[https://example.com](https://wiki.seeedstudio.com/Seeeduino_LoRAWAN/)" target="_blank">Ver documentación oficial Dragino</a>
+
 
 ---
 
