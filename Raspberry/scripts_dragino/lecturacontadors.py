@@ -14,11 +14,11 @@ import serial
 warnings.filterwarnings("ignore")
 
 # Credencials
-username = "service"
+username = "<usuario>"
 password = "<password>"
 
 # URL de la càmara Bosch IP y comanda para obtenir els valores de els contadores IVA
-url_iva_counter_values = "https://<direcció_ip>/rcp.xml?command=0x0b4a&type=P_OCTET&direction=READ"
+url_iva_counter_values = "https://<direccion_ip>/rcp.xml?command=0x0b4a&type=P_OCTET&direction=READ"
 
 # Funció per obtenir la resposta HTTP
 def get_response(url):
@@ -87,7 +87,7 @@ def set_system_time(datetime_str):
 def guardar_contadores_en_txt(counters):
     try:
         # Especificar el nom de l'arxiu
-        nombre_archivo = "<ruta/a/fitxer.txt>"
+        nombre_archivo = "<ruta_fichero>"
         # Obrir arxiu en mode append
         with open(nombre_archivo, 'a') as archivo:
             # Obtenir i formatetjar data actual
@@ -176,10 +176,10 @@ def escuchar_serie(ser):
 response_bytes = get_response(url_iva_counter_values)
 
 # port serie
-puerto_serial = '<port_dragino>'
+puerto_serial = '<puerto_serie>'
 
 # Baudrate
-baudrate=115200
+baudrate= ....
 
 # Obrir port serie
 ser = serial.Serial(puerto_serial, baudrate, timeout=1)
