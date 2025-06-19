@@ -10,6 +10,7 @@ Consulta las especificaciones y guía técnica del modelo en la wiki de Seeed St
 
 🔗 [Ver documentación oficial Dragino](https://wiki.seeedstudio.com/Seeeduino_LoRAWAN/)
 
+
 ---
 
 ## ⚙️ Parámetros de Configuración
