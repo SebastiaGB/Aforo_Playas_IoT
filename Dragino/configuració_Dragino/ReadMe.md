@@ -5,15 +5,6 @@ Este repositorio contiene el código y recursos necesarios para configurar un tr
 > 🔐 **Nota:** Todo el contenido aquí incluido está adaptado con fines técnicos y educativos. No contiene credenciales privadas.
 
 ---
-
-## 📦 Contenido del Repositorio
-
-📁 **script_dragino/** → Código fuente Arduino para el transmisor Dragino.  
-📁 **libraries/** → Librerías necesarias para la compilación del código.  
-📁 **Documentación/** → PDF con comandos AT y especificaciones técnicas del chip.
-
----
-
 ## ⚙️ Configuración del Dispositivo
 
 Parámetros usados para configurar el Dragino:
