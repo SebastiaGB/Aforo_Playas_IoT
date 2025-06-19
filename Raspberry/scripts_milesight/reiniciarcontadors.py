@@ -1,3 +1,5 @@
+> ⚠️ Este script es una **recreación técnica anónima y adaptada** con fines demostrativos. No incluye contraseñas, direcciones IP ni configuraciones reales utilizadas en entornos de producción.
+
 import requests
 import warnings
 
@@ -9,7 +11,7 @@ username = "<usuario>"
 password = "<contraseña>"
 
 # URL de la càmara Bosch IP y comanda para obtenir els valores de els contadores IVA
-url_reset_counters = "https://<tu_dirección_ip>/rcp.xml?command=0x0b4a&type=P_OCTET&direction=WRITE"
+url_reset_counters = "https://<dirección_ip>/rcp.xml?command=0x0b4a&type=P_OCTET&direction=WRITE"
 
 # Mètode per a reiniciar els contadors
 def reset_counters(url):
