@@ -1,14 +1,7 @@
-
-# Proyecto de Control de Aforo en la Playa de Es Trenc
-
-## Resumen Ejecutivo
-Este documento describe el desarrollo e implementación de un sistema inteligente de control de aforo para la Playa de Es Trenc (Mallorca)...
-
-[Contenido general del proyecto...]
-
 ## 📂 Raspberry/ – Configuración y Scripts de la Raspberry Pi
 
-La Raspberry Pi actúa como el núcleo local del sistema. A través de ella se gestionan las comunicaciones entre los dispositivos de captura (cámaras y sensores) y los transmisores LoRa. Toda la documentación se encuentra en la carpeta `Raspberry/`.
+La Raspberry Pi actúa como el núcleo local del sistema. A través de ella se gestionan las comunicaciones entre los dispositivos de captura (cámaras y sensores) y los transmisores LoRa.
+A continuación se explican los pasos a seguir para tener la raspberry pi bien configurada, facilidades y las opciones que deben añadirse dependiendo del receptor LoRa que esta posea.
 
 ### Especificaciones Generales
 
@@ -68,8 +61,8 @@ ip a
 
 ### ⏱ Automatización con Crontab
 
-- Para **Dragino**, se configura para enviar datos cada 10 minutos.
-- También se automatiza el **reinicio diario de contadores** a las 2:00 AM.
+- Para **Dragino**, se configura para enviar datos cada 'X0 minutos.
+- También se automatiza el **reinicio diario de contadores**.
 - En el caso de **Milesight**, no se usa `crontab`, sino un bucle `while True` persistente.
 
 #### Configurar crontab:
