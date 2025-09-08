@@ -1,4 +1,4 @@
-# 📡 Configuración de Transmisores Milesight
+# Configuración de Transmisores Milesight
 
 Esta carpeta contiene la documentación y scripts relacionados con la configuración de dispositivos **Milesight LoRaWAN** utilizados en el sistema de control de aforo del proyecto.
 
@@ -8,10 +8,10 @@ Esta carpeta contiene la documentación y scripts relacionados con la configurac
 
 Los transmisores han sido configurados con los siguientes parámetros:
 
-- 🔄 **Modo**: OTAA (Over-The-Air Activation)
-- 🔋 **Clase**: C (recepción continua de downlinks)
-- 🧭 **ADR**: Desactivado
-- 📶 **Spreading Factor**: SF12 (máxima cobertura)
+-  **Modo**: OTAA (Over-The-Air Activation)
+-  **Clase**: C (recepción continua de downlinks)
+-  **ADR**: Desactivado
+-  **Spreading Factor**: SF12 (máxima cobertura)
 
 ---
 
