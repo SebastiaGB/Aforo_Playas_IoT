@@ -1,4 +1,4 @@
-## 📂 Raspberry/ – Configuración y Scripts de la Raspberry Pi
+## Raspberry/ – Configuración y Scripts de la Raspberry Pi
 
 La Raspberry Pi actúa como el núcleo local del sistema. A través de ella se gestionan las comunicaciones entre los dispositivos de captura (cámaras y sensores) y los transmisores LoRa.
 A continuación se explican los pasos a seguir para tener la raspberry pi bien configurada, facilidades y las opciones que deben añadirse dependiendo del receptor LoRa que esta posea.
