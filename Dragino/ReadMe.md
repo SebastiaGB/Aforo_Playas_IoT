@@ -1,4 +1,4 @@
-# 🚀 Dragino – Configuración del Transmisor LoRa
+# Dragino – Configuración del Transmisor LoRa
 
 > Este directorio contiene la configuración y scripts necesarios para el funcionamiento de transmisores **Dragino** mediante **Arduino IDE**.
 
