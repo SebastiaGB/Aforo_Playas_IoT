@@ -1,4 +1,4 @@
-# 📊 Lectura, envío y reinicio de contadores Bosch vía API y puerto serie
+# Lectura, envío y reinicio de contadores Bosch vía API y puerto serie
 
 > ⚠️ Este proyecto es una **versión demostrativa y anonimizada** basada en una solución real.  
 > No contiene datos confidenciales, contraseñas ni endpoints reales.  
@@ -29,7 +29,7 @@ Antes de ejecutar los scripts:
 
 ## ⚙️ Parámetros a configurar
 
-### 🔧 En `lecturacontadors.py`
+### En `lecturacontadors.py`
 
 - **Línea 12:** `usuario` – nombre de usuario de acceso a la cámara.
 - **Línea 13:** `contraseña` – contraseña de acceso a la cámara.
@@ -37,7 +37,7 @@ Antes de ejecutar los scripts:
 - **Línea 85:** `ruta_fichero` – ruta al archivo donde guardar los valores.
 - **Línea 161:** `puerto_serie` – puerto serie al que se conecta el gateway.
 
-### 🔧 En `reiniciarcontadors.py`
+### En `reiniciarcontadors.py`
 
 - **Línea 8:** `usuario` – nombre de usuario de acceso a la cámara.
 - **Línea 9:** `contraseña` – contraseña de acceso.
@@ -45,7 +45,7 @@ Antes de ejecutar los scripts:
 
 ---
 
-## 🧠 Descripción de funcionamiento
+## Descripción de funcionamiento
 
 ### `lecturacontadors.py`
 
