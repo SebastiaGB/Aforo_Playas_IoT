@@ -1,4 +1,4 @@
-# 👣 Sistema de Conteo de Personas con Sensores Infrarrojos (IR)
+# Sistema de Conteo de Personas con Sensores Infrarrojos (IR)
 
 Este sistema forma parte del proyecto de control de aforo en la Playa de Es Trenc. Se compone de sensores infrarrojos instalados en accesos peatonales clave, concretamente en el camino de entrada de Ses Covetes. Su función es detectar el paso de personas para calcular en tiempo real la ocupación de la playa.
 
@@ -75,10 +75,10 @@ Incluye:
 
 ## 🛡️ Privacidad y Fiabilidad
 
-✔️ No se almacena ninguna imagen.  
-✔️ El conteo es completamente anónimo.  
-✔️ Bajo consumo y mantenimiento mínimo.  
-✔️ Adaptado a condiciones exteriores sin conexión eléctrica.
+- No se almacena ninguna imagen.  
+- El conteo es completamente anónimo.  
+- Bajo consumo y mantenimiento mínimo.  
+-  Adaptado a condiciones exteriores sin conexión eléctrica.
 
 ---
 
