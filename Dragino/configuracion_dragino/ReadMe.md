@@ -1,4 +1,4 @@
-# 🚀 Configuración del Transmisor Dragino con Arduino
+# Configuración del Transmisor Dragino con Arduino
 
 Este repositorio contiene el código y recursos necesarios para configurar un transmisor **Dragino LoRaWAN** como parte de un sistema de conteo de personas y vehículos en entornos naturales, integrando dispositivos IoT con la plataforma IoTIB.
 
