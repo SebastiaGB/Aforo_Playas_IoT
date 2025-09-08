@@ -1,4 +1,4 @@
-# 📡 Lectura y sincronización de contadores Bosch vía API y puerto serie
+# Lectura y sincronización de contadores Bosch vía API y puerto serie
 
 > ⚠️ Este proyecto es una recreación técnica con fines demostrativos basada en una solución desarrollada profesionalmente. No contiene información confidencial ni enlaces reales.
 
@@ -34,7 +34,7 @@ Además, requiere un archivo `.txt` (cuyo nombre y ruta puedes definir) que actu
 
 ---
 
-## 🧠 ¿Qué hace cada script?
+## ¿Qué hace cada script?
 
 ### `milesight_controller.py`
 
