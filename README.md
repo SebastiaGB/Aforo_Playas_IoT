@@ -1,4 +1,4 @@
-# 🏖️ Proyecto de Control de Aforo en la Playa de Es Trenc (Mallorca)
+# Proyecto de Control de Aforo en la Playa de Es Trenc (Mallorca)
 
 > ⚠️ Proyecto desarrollado durante mi etapa como técnico IoT en colaboración con FUEIB. Esta versión es una **recreación técnica** con fines demostrativos. No incluye datos sensibles ni contraseñas.
 
@@ -10,10 +10,10 @@ Este proyecto consistió en diseñar e implementar un sistema IoT para el **cont
 
 El sistema permite:
 
-- 👣 Contabilizar el acceso y salida de personas en diferentes entradas de la playa.
-- 🚗 Contabilizar los vehículos en el aparcamiento.
-- 📡 Enviar los datos en tiempo real a una plataforma de visualización remota (**IoTIB**).
-- ✅ Operar de forma automatizada, respetando la privacidad y con bajo mantenimiento.
+- Contabilizar el acceso y salida de personas en diferentes entradas de la playa.
+- Contabilizar los vehículos en el aparcamiento.
+- Enviar los datos en tiempo real a una plataforma de visualización remota (**IoTIB**).
+- Operar de forma automatizada, respetando la privacidad y con bajo mantenimiento.
 
 ---
 
@@ -122,19 +122,19 @@ Los scripts incluyen:
 
 ## 🔒 Seguridad y Privacidad
 
-✅ El sistema está diseñado para ser **totalmente anónimo**.  
-✅ Solo se almacenan datos numéricos de conteo.  
-✅ No se capturan ni almacenan imágenes ni datos personales.  
-✅ En esta versión pública **no se incluye** ninguna contraseña, dirección IP real ni credenciales.
+ El sistema está diseñado para ser **totalmente anónimo**.  
+ Solo se almacenan datos numéricos de conteo.  
+ No se capturan ni almacenan imágenes ni datos personales.  
+ En esta versión pública **no se incluye** ninguna contraseña, dirección IP real ni credenciales.
 
 ---
 
 ## ✅ Resultados Obtenidos
 
-- ✅ Instalación estable y operativa durante la temporada.
-- ✅ Monitorización en tiempo real de aforo en la plataforma IoTIB.
-- ✅ Automatización completa sin necesidad de intervención constante.
-- ✅ Sistema adaptable y escalable para otros entornos naturales.
+- Instalación estable y operativa durante la temporada.
+- Monitorización en tiempo real de aforo en la plataforma IoTIB.
+- Automatización completa sin necesidad de intervención constante.
+- Sistema adaptable y escalable para otros entornos naturales.
 
 ---
 
